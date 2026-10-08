@@ -1,0 +1,44 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "responder_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "deliver",
+    "inputs": [
+      {
+        "name": "consumer",
+        "type": "address",
+        "internalType": "contract MockOracle"
+      },
+      {
+        "name": "envelope",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "responder",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  }
+]

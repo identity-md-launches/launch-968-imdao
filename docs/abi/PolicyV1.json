@@ -1,0 +1,20 @@
+[
+  {
+    "type": "function",
+    "name": "weights",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "development",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "reserve",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "pure"
+  }
+]
