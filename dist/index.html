@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#edf1e9" />
+    <meta
+      name="description"
+      content="IMDAO — a place for community ideas, thoughtful discussion and shared decisions. A local, illustrative preview."
+    />
+    <title>IMDAO · A place for the next good idea</title>
+    <script>
+      (() => {
+        let theme = matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        try {
+          const saved = localStorage.getItem("imdao.theme.v1");
+          if (saved === "light" || saved === "dark") theme = saved;
+        } catch {}
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]').content =
+          theme === "dark" ? "#171b1d" : "#edf1e9";
+      })();
+    </script>
+    <style>
+      html {
+        background: #edf1e9;
+        color: #23372b;
+      }
+      html[data-theme="dark"] {
+        background: #171b1d;
+        color: #edf0e9;
+      }
+    </style>
+    <link
+      rel="preload"
+      href="./fonts/IBMPlexMono-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script type="module" crossorigin src="./assets/index-DptjT0G7.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C2lnKVda.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript
+      >This local preview needs JavaScript to browse ideas and save private
+      drafts. Enable JavaScript and reload.</noscript
+    >
+  </body>
+</html>

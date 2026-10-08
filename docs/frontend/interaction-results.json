@@ -1,0 +1,588 @@
+{
+  "browser": "Chromium via Playwright",
+  "basePath": "/preview/",
+  "results": [
+    {
+      "name": "Home renders locally at a static subpath with the exact hero",
+      "result": "PASS"
+    },
+    {
+      "name": "Full IBM Plex Mono font loads; exact nine-square logo geometry",
+      "result": "PASS"
+    },
+    {
+      "name": "Light system preference, system changes, remembered manual override",
+      "result": "PASS"
+    },
+    {
+      "name": "First-paint bootstrap uses dark system or stored preference before React",
+      "result": "PASS"
+    },
+    {
+      "name": "Explore button reaches the feed; query and category/status filters work",
+      "result": "PASS"
+    },
+    {
+      "name": "Idea detail, read-only discussion and project backlink work",
+      "result": "PASS"
+    },
+    {
+      "name": "All project states and all detail routes render",
+      "result": "PASS"
+    },
+    {
+      "name": "Governance overview and every example action detail render",
+      "result": "PASS"
+    },
+    {
+      "name": "Treasury separates available, reserved, paid, principal and proceeds",
+      "result": "PASS"
+    },
+    {
+      "name": "All four starters retain provenance, prefill fields, and stay editable",
+      "result": "PASS"
+    },
+    {
+      "name": "Required fields validate inline and focus the first invalid input",
+      "result": "PASS"
+    },
+    {
+      "name": "Scratch draft previews missing fields and treats user input as text",
+      "result": "PASS"
+    },
+    {
+      "name": "Budget requires a valid number and a matching asset or unit",
+      "result": "PASS"
+    },
+    {
+      "name": "Saved drafts reopen after reload; edits persist to the same ID",
+      "result": "PASS"
+    },
+    {
+      "name": "Unsaved navigation and draft replacement can be cancelled; confirmed discard works",
+      "result": "PASS"
+    },
+    {
+      "name": "Browser Back protects unsaved work",
+      "result": "PASS"
+    },
+    {
+      "name": "Deletion requires confirmation and persists",
+      "result": "PASS"
+    },
+    {
+      "name": "Missing routes and unknown idea/project/decision/draft/template recover",
+      "result": "PASS"
+    },
+    {
+      "name": "Corrupt stored drafts are preserved until explicit reset",
+      "result": "PASS"
+    },
+    {
+      "name": "Storage write failure never claims save; theme remains usable for session",
+      "result": "PASS"
+    },
+    {
+      "name": "Blocked reads show a recoverable storage error",
+      "result": "PASS"
+    },
+    {
+      "name": "Keyboard navigation, visible focus, form activation and skip link",
+      "result": "PASS"
+    },
+    {
+      "name": "light: responsive layout at 320, 375, 768 and 1440; every page without horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "light: rendered contrast and automated accessibility",
+      "result": "PASS"
+    },
+    {
+      "name": "light: desktop and mobile screenshots of final export",
+      "result": "PASS"
+    },
+    {
+      "name": "dark: responsive layout at 320, 375, 768 and 1440; every page without horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "dark: rendered contrast and automated accessibility",
+      "result": "PASS"
+    },
+    {
+      "name": "dark: desktop and mobile screenshots of final export",
+      "result": "PASS"
+    },
+    {
+      "name": "200% text enlargement reflows at 768px",
+      "result": "PASS"
+    },
+    {
+      "name": "Forced-colors focus has a system color and visible perimeter",
+      "result": "PASS"
+    },
+    {
+      "name": "Unknown draft schema and malformed fields are preserved and rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Unsaved work is protected on reload and same-route replacement",
+      "result": "PASS"
+    },
+    {
+      "name": "No runtime console errors or unexpected failed resource loads",
+      "result": "PASS"
+    }
+  ],
+  "contrast": [
+    {
+      "label": "light",
+      "pairs": [
+        {
+          "selector": ".hero-subtitle",
+          "foreground": "rgb(95, 113, 98)",
+          "background": "rgb(237, 241, 233)",
+          "ratio": 4.56
+        },
+        {
+          "selector": ".demo-note",
+          "foreground": "rgb(95, 113, 98)",
+          "background": "rgb(237, 241, 233)",
+          "ratio": 4.56
+        },
+        {
+          "selector": ".idea-card p",
+          "foreground": "rgb(97, 115, 100)",
+          "background": "rgb(255, 253, 247)",
+          "ratio": 4.98
+        },
+        {
+          "selector": ".badge",
+          "foreground": "rgb(35, 55, 43)",
+          "background": "rgb(228, 235, 223)",
+          "ratio": 10.44
+        },
+        {
+          "selector": ".primary-nav a",
+          "foreground": "rgb(35, 55, 43)",
+          "background": "rgb(220, 231, 211)",
+          "ratio": 9.93
+        },
+        {
+          "selector": ".button.primary",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(35, 55, 43)",
+          "ratio": 12.71
+        },
+        {
+          "selector": ".button.accent",
+          "foreground": "rgb(35, 55, 43)",
+          "background": "rgb(200, 221, 187)",
+          "ratio": 8.78
+        },
+        {
+          "selector": ".starter-card>p",
+          "foreground": "rgb(95, 113, 98)",
+          "background": "rgb(237, 241, 233)",
+          "ratio": 4.56
+        }
+      ]
+    },
+    {
+      "label": "dark",
+      "pairs": [
+        {
+          "selector": ".hero-subtitle",
+          "foreground": "rgb(172, 185, 173)",
+          "background": "rgb(23, 27, 29)",
+          "ratio": 8.5
+        },
+        {
+          "selector": ".demo-note",
+          "foreground": "rgb(172, 185, 173)",
+          "background": "rgb(23, 27, 29)",
+          "ratio": 8.5
+        },
+        {
+          "selector": ".idea-card p",
+          "foreground": "rgb(172, 185, 173)",
+          "background": "rgb(34, 40, 42)",
+          "ratio": 7.33
+        },
+        {
+          "selector": ".badge",
+          "foreground": "rgb(237, 240, 233)",
+          "background": "rgb(47, 56, 50)",
+          "ratio": 10.53
+        },
+        {
+          "selector": ".primary-nav a",
+          "foreground": "rgb(237, 240, 233)",
+          "background": "rgb(53, 69, 58)",
+          "ratio": 8.84
+        },
+        {
+          "selector": ".button.primary",
+          "foreground": "rgb(35, 55, 43)",
+          "background": "rgb(186, 213, 178)",
+          "ratio": 8.02
+        },
+        {
+          "selector": ".button.accent",
+          "foreground": "rgb(35, 55, 43)",
+          "background": "rgb(186, 213, 178)",
+          "ratio": 8.02
+        },
+        {
+          "selector": ".starter-card>p",
+          "foreground": "rgb(172, 185, 173)",
+          "background": "rgb(23, 27, 29)",
+          "ratio": 8.5
+        }
+      ]
+    }
+  ],
+  "audits": [
+    {
+      "label": "light home desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "li:nth-child(1) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(2) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(4) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "light editor",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "#field-problem"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-beneficiary"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-firstStep"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-success"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-risks"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-references"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "light governance",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "light treasury",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "light mobile home",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "li:nth-child(1) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(2) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(4) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "dark home desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "li:nth-child(1) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(2) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(4) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "dark editor",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "#field-problem"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-beneficiary"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-firstStep"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-success"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-risks"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "#field-references"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "dark governance",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "dark treasury",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "dark mobile home",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "li:nth-child(1) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(2) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "li:nth-child(4) > .journey-arrow[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "failedResources": []
+}

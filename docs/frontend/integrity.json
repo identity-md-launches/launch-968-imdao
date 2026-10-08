@@ -1,0 +1,18 @@
+{
+  "baselineCommit": "2e7c4f5f0489a0b1d4eedf38d59c70951803f7b2",
+  "preExistingFilesChecked": 156,
+  "preExistingFilesChanged": [
+    "README.md"
+  ],
+  "protectedFilesUnchanged": true,
+  "historicalChecksumMismatches": 23,
+  "historicalChecksumNote": "All 23 mismatching vendored files equal their start-of-task hashes; the historical REVIEW.sha256 file is unchanged.",
+  "runtimeAssetsRelative": true,
+  "publicAssetsMatchExport": true,
+  "generatedDependenciesInRepository": false,
+  "filesInDelivery": 214,
+  "budgetBytes": 8388608,
+  "measurement": "Conservative complete file set INCLUDING both repository evidence and ignored network artifacts, plus baseline code/libraries. Excludes .git metadata and pinned/scratch inputs. No Git mutation or commit was authorized.",
+  "uncompressedFileBytes": 4375709,
+  "archiveProxyBytes": 2395034
+}

@@ -1,4 +1,85 @@
-# IMDAO local Foundry prototype
+# IMDAO
+
+
+## Community website — Soft Studio
+
+The continuation adds a working React / TypeScript / Vite frontend in `web/` and a complete production export in `dist/`. The site is a local, demo-only preview. Contracts, contract tests, existing configuration, dependency locks, vendored libraries and original licenses are unchanged. No deployment or wallet interaction took place.
+
+### Install, develop and rebuild
+
+Use Node 22.12+ and npm. From the repository root:
+
+```sh
+cd web
+npm ci
+npm run dev
+```
+
+The development server binds to `127.0.0.1`. To validate and produce the repository-root export:
+
+```sh
+cd web
+npm run typecheck
+npm run build
+npm run preview
+```
+
+Run these blocks separately from the repository root. `npm run preview` serves the production build locally, normally at `http://127.0.0.1:4173`. The checked-in export also needs no npm installation to preview:
+
+```sh
+python3 -m http.server 4173 --bind 127.0.0.1 --directory dist
+```
+
+Open `http://127.0.0.1:4173/`. Keep the same origin and port to reopen that browser’s saved drafts. Installing packages may use the network; after populating an npm cache, `npm ci --offline` works from the supplied lockfile. This was checked using an isolated build directory. No dependency cache or `node_modules` directory is delivered. Rollup is pinned through the new frontend manifest’s override because the automatically resolved 4.64.2 reproducibly stalled this Vite build; 4.46.2 builds successfully.
+
+### What works
+
+- `#/` and `#/ideas`: community example cards, text search, category and status filters, an empty-results state, idea details and illustrative discussions.
+- `#/projects` and `#/projects/:id`: demo project scope, owner status, milestones and linked ideas/decisions. Completed fixtures are explicitly not real completed work.
+- `#/vote` and `#/vote/:id`: read-only governance examples, the actual prototype lifecycle and four allowed action types. No vote, queue, execution or submission action exists in this frontend.
+- `#/treasury`: development/reserve examples, available/reserved/paid values and separate principal returns/proceeds, all labeled in MockAsset units. Live values say “Not connected”.
+- `#/draft/new`, `#/draft/new?template=:id`, `#/draft/:id`, `#/drafts`: four curated starters, blank drafts, editable preview, local save/reopen/edit/delete, validation and storage recovery. Business starters include customers, cost assumptions and receipt reporting. A proposed operator and budget start unspecified.
+- Sage Light and Graphite Dark follow the system until manually selected; a separate versioned preference persists when storage is available. The pre-render theme bootstrap avoids a wrong-theme first paint.
+
+Drafts are private browser data, saved only after an explicit action. Required fields are title, problem/opportunity and first step. Unspecified fields remain visible as incomplete. Navigation, replacement, browser Back and reload protect unsaved work. Delete/reset require native confirmation. A storage failure never reports success. Clearing browser data can remove drafts; save separate copies of important text. This is not encrypted storage and there is no cross-device synchronization.
+
+### Source and data
+
+`web/src/data.ts` contains typed templates, ideas, projects, governance and treasury fixtures with explicit IDs and demo provenance. Drafts have local provenance and retain `sourceTemplateId`. `storage.ts` validates versioned data, field lengths/types, duplicate IDs and budget units, and caps storage at 60 drafts / 2,000,000 serialized characters. Corrupt data is preserved until an explicit reset. Theme storage uses `imdao.theme.v1`; drafts use a version-1 envelope under `imdao.drafts.v1`.
+
+`App.tsx` contains the shared shell and hash router, `pages.tsx` the read-only views, `Editor.tsx` the local editor, and `components.tsx` shared interface primitives. All inputs render as text. [DESIGN.md](DESIGN.md) records the implemented tokens, exact logo geometry, full local IBM Plex Mono font and responsive behavior. Asset and guidance notices ship under `web/public/licenses/` and `dist/licenses/`.
+
+### Checks and screenshots
+
+Production build, TypeScript check and an offline lockfile install passed. Browser checks use a temporary local server at `/preview/` and installed Chromium through Playwright. The script owns and closes both its browser and server; it does not deploy the site. [Validation and six-domain review](docs/frontend/validation.md) documents actual results, fixes and limitations. [Machine-readable results](docs/frontend/interaction-results.json) and [build log](docs/frontend/build.log) retain evidence.
+
+To reproduce browser checks, install the check tools separately from the application, then run from the repository root:
+
+```sh
+npm install --prefix /tmp/imdao-browser-tools playwright axe-core@4.10.3
+/tmp/imdao-browser-tools/node_modules/.bin/playwright install chromium
+IMDAO_PLAYWRIGHT_MODULE=/tmp/imdao-browser-tools/node_modules/playwright/index.mjs \
+IMDAO_AXE_SCRIPT=/tmp/imdao-browser-tools/node_modules/axe-core/axe.min.js \
+node web/checks/browser.mjs
+```
+
+An existing Chromium binary may be selected with `IMDAO_CHROMIUM=/absolute/path/to/chromium`. The worker used the preinstalled Chromium headless shell because the browser connector was unavailable. Exact worker commands and tool versions are in the validation record.
+
+Screenshots: [desktop light](docs/frontend/desktop-light.png), [desktop dark](docs/frontend/desktop-dark.png), [mobile light](docs/frontend/mobile-light.png), [mobile dark](docs/frontend/mobile-dark.png). Additional editor and keyboard-focus captures accompany these in `docs/frontend/`.
+
+Evidence is retained under `docs/frontend/` for repository review. The network output copies remain under `artifacts/`, which the supplied workspace excludes from Git. After re-running checks, refresh the corresponding evidence copies in `docs/frontend/`.
+
+### Publishing and later integration
+
+No public publication was performed. When separately authorized, publish the **contents of `dist/`**, preserving its `assets/`, `fonts/` and `licenses/` directories. The publisher should use this finished export, not rebuild it. Vite uses `base: './'`, all runtime assets are local and relative, and hash routes work at a static gateway subpath without rewrite rules. Do not publish `web/`, private drafts, dependency caches or development tooling as the site.
+
+Backend/onchain integration and an independent security review are future work. There is no database, authentication, API, wallet connection, transaction construction, autonomous posting, funding, paid service or live revenue. The governance descriptions come from the existing source: enrollment, constrained payouts, selection between two pinned fee policies, and a mock oracle request. An idea is not a formal proposal; votes and executed payments do not establish completion.
+
+This workspace task forbids modifying `.git/`, so no commit or deployment was made by the worker. The contributor network must capture `web/`, `dist/`, `DESIGN.md`, this README and `docs/frontend/` in its submission commit. Existing `REVIEW.sha256` is retained as a historical record. Its README entry predates this continuation, and 23 vendored-library entries already differed from the workspace at task start. It is not a clean checksum of the accepted tree; this frontend task does not regenerate that contract-review artifact. A separate comparison against the actual start-of-task files confirms that only README.md changed among pre-existing files. See the integrity record in `docs/frontend/`.
+
+---
+
+## Local Foundry prototype
 
 **Source-only, valueless fixtures. Nothing has been deployed, signed, funded, or connected to a live service. This is not launch-ready or audited.**
 
@@ -13,7 +94,6 @@ forge fmt --check
 forge build
 forge test
 forge lint src --severity high
-sha256sum -c REVIEW.sha256
 ```
 
 Optional focused runs:
@@ -46,7 +126,7 @@ Dependency revisions and included subsets are recorded in [dependencies.lock.jso
 | `PolicyV1` / `PolicyV2` | Direct pure 80/20 and 60/40 development/reserve weights. No storage, proxy, or external dependency. |
 | `MockOracle` / `MockDelivery` | Timelock requests evidence, immutable delivery authenticates its fixture responder, and anyone expires a pending request after timeout. Evidence confers no votes or action authority. |
 
-Only policy selection and recipients change. Token, treasury, hook, supported assets, pool, caps, voting formula, fee, and authority wiring do not. There is no owner/AI bypass, proxy, delegatecall, generic call dispatcher, trading pause, sweep, conversion, outgoing treasury approval, LP-principal claim, reward, buyback, or website.
+Only policy selection and recipients change. Token, treasury, hook, supported assets, pool, caps, voting formula, fee, and authority wiring do not. There is no owner/AI bypass, proxy, delegatecall, generic call dispatcher, trading pause, sweep, conversion, outgoing treasury approval, LP-principal claim, reward or buyback. The separate frontend described above is a local preview only.
 
 The real local PoolManager's owner is the restricted timelock. Its administrative selectors are outside the governor's allowlist, so the local fixture cannot enable a protocol-fee controller through governance.
 

@@ -1,0 +1,37 @@
+$ npm ci --offline --cache /tmp/imdao-npm-cache --no-audit --no-fund
+
+added 21 packages in 893ms
+Exit: 0
+
+$ npm run typecheck
+
+> imdao-community@1.0.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 10.9.9 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+Exit: 0
+
+$ npm run build
+
+> imdao-community@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v7.1.3 building for production...
+transforming...
+✓ 35 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                   1.70 kB │ gzip:  0.82 kB
+../dist/assets/index-C2lnKVda.css   21.01 kB │ gzip:  5.27 kB
+../dist/assets/index-DptjT0G7.js   232.91 kB │ gzip: 72.90 kB
+✓ built in 1.38s
+npm notice
+npm notice New major version of npm available! 10.9.9 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+Exit: 0
